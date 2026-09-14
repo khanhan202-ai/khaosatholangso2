@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Khảo sát Hồ Lắng số 2</title>
+    <script>
+        // Danh sách 5 link Google Forms tương ứng với 5 mức BID
+        var links = [
+            "https://forms.gle/CWwzLhLsxL2mgCa16",
+            "https://forms.gle/qKywS5FjsJVvyRAx5",
+            "https://forms.gle/9D64kMcGmqiEE9gc8",
+            "https://forms.gle/U45CFD8vV3W5iPT97",
+            "https://forms.gle/cXSP9zUUsY5ABMtL7"
+        ];
+        
+        // Thuật toán chọn ngẫu nhiên 1 link
+        var randomIndex = Math.floor(Math.random() * links.length);
+        var selectedLink = links[randomIndex];
+        
+        // Tự động chuyển hướng ngay khi tải trang
+        window.onload = function() {
+            window.location.replace(selectedLink);
+        };
+    </script>
+</head>
+<body>
+    <p>Hệ thống đang tải bảng câu hỏi. Vui lòng đợi trong giây lát...</p>
+</body>
+</html>
