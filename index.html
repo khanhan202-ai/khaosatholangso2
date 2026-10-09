@@ -4,18 +4,27 @@
     <meta charset="UTF-8">
     <title>Khảo sát Hồ Lắng số 2</title>
     <script>
-        // Danh sách 5 link Google Forms tương ứng với 5 mức BID
-        var links = [
-            "https://forms.gle/tG9j1DuB754iQffh6",
-            "https://forms.gle/unaqcWpvktf5sWTp6",
-            "https://forms.gle/uBYRuJSMLQUsVrjf9",
-            "https://forms.gle/di4694amdNn1atWr7",
-            "https://forms.gle/vPKTgTADSgPdf1zE9"
+        // Danh sách 5 link Google Forms tương ứng với 5 mức BID và trọng số (weight)
+        var surveyLinks = [
+            { url: "https://forms.gle/tG9j1DuB754iQffh6", weight: 70 },  // Mức 50: Nhận 70% người truy cập
+            { url: "https://forms.gle/unaqcWpvktf5sWTp6", weight: 7.5 }, // Mức 200: Nhận 7.5%
+            { url: "https://forms.gle/uBYRuJSMLQUsVrjf9", weight: 7.5 }, // Mức 400: Nhận 7.5%
+            { url: "https://forms.gle/di4694amdNn1atWr7", weight: 7.5 }, // Mức 500: Nhận 7.5%
+            { url: "https://forms.gle/vPKTgTADSgPdf1zE9", weight: 7.5 }  // Mức 600: Nhận 7.5%
         ];
         
-        // Thuật toán chọn ngẫu nhiên 1 link
-        var randomIndex = Math.floor(Math.random() * links.length);
-        var selectedLink = links[randomIndex];
+        // Thuật toán chọn link theo phần trăm trọng số
+        var totalWeight = 100; // Tổng trọng số là 100%
+        var randomNum = Math.random() * totalWeight;
+        var selectedLink = "";
+        
+        for (var i = 0; i < surveyLinks.length; i++) {
+            if (randomNum < surveyLinks[i].weight) {
+                selectedLink = surveyLinks[i].url;
+                break;
+            }
+            randomNum -= surveyLinks[i].weight;
+        }
         
         // Tự động chuyển hướng ngay khi tải trang
         window.onload = function() {
