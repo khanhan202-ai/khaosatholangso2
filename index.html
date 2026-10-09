@@ -6,12 +6,12 @@
     <script>
         // Danh sách 5 link Google Forms tương ứng với 5 mức BID và trọng số (weight)
         var surveyLinks = [
-            { url: "https://forms.gle/tG9j1DuB754iQffh6", weight: 70 },  // Mức 50: Nhận 70% người truy cập
-            { url: "https://forms.gle/unaqcWpvktf5sWTp6", weight: 7.5 }, // Mức 200: Nhận 7.5%
-            { url: "https://forms.gle/uBYRuJSMLQUsVrjf9", weight: 7.5 }, // Mức 400: Nhận 7.5%
-            { url: "https://forms.gle/di4694amdNn1atWr7", weight: 7.5 }, // Mức 500: Nhận 7.5%
-            { url: "https://forms.gle/vPKTgTADSgPdf1zE9", weight: 7.5 }  // Mức 600: Nhận 7.5%
-        ];
+    { url: "https://forms.gle/tG9j1DuB754iQffh6", weight: 3 },   // BID 50: 3%
+    { url: "https://forms.gle/unaqcWpvktf5sWTp6", weight: 30 },  // BID 200: 30%
+    { url: "https://forms.gle/uBYRuJSMLQUsVrjf9", weight: 34 },  // BID 400: 34%
+    { url: "https://forms.gle/di4694amdNn1atWr7", weight: 22 },  // BID 500: 22%
+    { url: "https://forms.gle/vPKTgTADSgPdf1zE9", weight: 11 }   // BID 600: 11%
+];
         
         // Thuật toán chọn link theo phần trăm trọng số
         var totalWeight = 100; // Tổng trọng số là 100%
